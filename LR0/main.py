@@ -1,2 +1,6 @@
 print("Hello world")
-print("ok")
+
+# checkout Sergey
+# add
+# commit
+# push
