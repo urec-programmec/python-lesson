@@ -7,6 +7,7 @@ ys = []
 for i in xs:
     ys.append(function(i))
 print(xs)
+
 print(ys)
 
 
