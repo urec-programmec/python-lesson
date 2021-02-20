@@ -8,5 +8,7 @@ for i in xs:
     ys.append(function(i))
 print(xs)
 print(ys)
+
+
 plt.plot (xs,ys)
 plt.show()
