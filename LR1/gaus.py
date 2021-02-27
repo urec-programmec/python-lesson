@@ -25,7 +25,7 @@ def gaus(a, b):
         for j in range(len(outM[0])):
             eoutM[i].append(outM[i][j])
 
-    # eoutM = outM.copy()
+
     for i in range(cnt):
         eoutM[i].append(tempC[i])
 
