@@ -4,7 +4,7 @@ from half import half
 from hord import hord
 from kasatel import kasatel
 
-number = 4
+number = 1
 
 
 def xprint(array):
@@ -15,33 +15,45 @@ def xprint(array):
     print("\n")
 
 
-a = -10
-b = 10
+a = -20
+b = 20
 h = 0.1
 e = 0.0001
-prev = function(a, number)
+prev = function(((a / h) + 1) * h, number)
 current = 1
 intervals = []
+answers = []
 answersKasatel = []
 answersHord = []
 answersHalf = []
 
-for i in range(int(a * (1 / h) + 1), int(b * (1 / h) + 1)):
+for i in range(int(a / h + 2), int(b / h + 1)):
     current = function(i * h, number)
-    if current * prev <= 0:
-        intervals.append([(i * h if function(i * h, number) <= 0 else (i - 1) * h), ((i - 1) * h if function(i * h, number) <= 0 else (i * h))])
+    if current * prev < 0:
+        intervals.append([(i * h if function(i * h, number) < 0 else (i - 1) * h), ((i - 1) * h if function(i * h, number) < 0 else (i * h))])
+    elif current == 0:
+        answers.append(i * h)
+
     prev = current
 
+intervalsHalf = [intervals[i] for i in range(len(intervals))]
+intervalsHord = [intervals[i] for i in range(len(intervals))]
+intervalsKasatel = [intervals[i] for i in range(len(intervals))]
+
 
 for i in range(len(intervals)):
-    answersHalf.append(half(intervals[i], e, number))
+    answersHalf.append(half(intervalsHalf[i], e, number))
 
 for i in range(len(intervals)):
-    answersHord.append(hord(intervals[i], e, number))
+    answersHord.append(hord(intervalsHord[i], e, number))
 
 for i in range(len(intervals)):
-    answersKasatel.append(kasatel(intervals[i], e, number))
+    answersKasatel.append(kasatel(intervalsKasatel[i], e, number))
 
+
+if len(answers) != 0:
+    print("Корни, полученные непосредственно")
+    xprint([[answers[i], 1, 0] for i in range(len(answers))])
 
 print("Метод половинного деления")
 xprint(answersHalf)

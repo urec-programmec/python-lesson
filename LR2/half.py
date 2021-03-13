@@ -6,7 +6,7 @@ def half(interval, err, number):
     value = function(middle, number)
     count = 1
     while math.fabs(value) > err:
-        if value < 0:
+        if value < 0 and function(interval[0], number) < 0:
             interval[0] = middle
         else:
             interval[1] = middle
