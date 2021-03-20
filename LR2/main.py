@@ -1,7 +1,6 @@
 from function import function
 from hord import hord
 import matplotlib.pyplot as plt
-from half import half
 
 a = 1
 b = 2
@@ -33,18 +32,10 @@ for i in range(int(a / h + 1), int(b / h + 1), 1):
         answers.append(i * h)
 
 
-intervalhalf = [intervals[i] for i in range(len(intervals))]
+
 intervalhord = [intervals[i] for i in range(len(intervals))]
-intervalkas = [intervals[i] for i in range(len(intervals))]
 
 
-
-
-
-for i in range(len(intervals)):
-    answershalf.append(half(intervalhalf[i], e))
-print("Метод половинного деления")
-xprint(answershalf)
 
 for i in range(len(intervals)):
     answershord.append(hord(intervalhord[i], e))
