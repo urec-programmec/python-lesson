@@ -7,9 +7,7 @@ b = 2
 h = 0.01
 intervals = []
 answers = []
-answershalf = []
 answershord = []
-answerskas = []
 e = 0.0001
 
 def xprint(array):
