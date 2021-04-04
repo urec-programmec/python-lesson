@@ -1,4 +1,3 @@
-import math
 from function import *
 
 def kasatel(interval, err, number):
@@ -10,9 +9,10 @@ def kasatel(interval, err, number):
     diffNext = diff - (function(diff, number) / d1function(diff, number))
     count = 1
     while math.fabs(diffNext - diff) > err:
+        diff = diffNext
         diffNext = diff - (function(diff, number) / d1function(diff, number))
         count += 1
-        diff = diffNext
 
-    return [diff, count, math.fabs(diffNext - diff)]
+
+    return [diffNext, count, math.fabs(diffNext - diff)]
 

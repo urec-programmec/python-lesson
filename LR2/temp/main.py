@@ -1,5 +1,4 @@
 from function import function
-import matplotlib.pyplot as plt
 from half import half
 from hord import hord
 

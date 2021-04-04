@@ -23,9 +23,11 @@ def function(x, number):
     elif number == 10:
         return 2 ** x - 2 * x ** 3 - 1
 
+
 def d1function(x, number):
     h = 1e-5
     return (function(x + h, number) - function(x - h, number)) / (2 * h)
+
 
 def d2function(x, number):
     h = 1e-5

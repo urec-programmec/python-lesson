@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-from function import function
 from slay import slay
 
 xs = [1, 2, 3, 4, 5]
